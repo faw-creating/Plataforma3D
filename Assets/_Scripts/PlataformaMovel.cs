@@ -24,6 +24,8 @@ public class PlataformaMovel : MonoBehaviour
         }
     }
 
+    // Codigo abaixo nao aparenta funcionar, arrumar quando possivel.
+
     // Faz o Player "virar filho" da plataforma para ele se mover junto com ela
     private void OnTriggerEnter(Collider other)
     {
