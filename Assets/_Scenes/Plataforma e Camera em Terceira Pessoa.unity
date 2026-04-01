@@ -660,9 +660,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 712914113}
+  - component: {fileID: 712914114}
   - component: {fileID: 712914116}
   - component: {fileID: 712914115}
-  - component: {fileID: 712914114}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -779,7 +779,7 @@ GameObject:
   - component: {fileID: 779288285}
   - component: {fileID: 779288284}
   m_Layer: 3
-  m_Name: Plataforma
+  m_Name: Plataforma (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1350,7 +1350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6961526614821998025, guid: 24a57b49c8d40cb4bbe96bf066389959, type: 3}
       propertyPath: m_Name
-      value: Moeda de Rubi
+      value: Moeda de Rubi (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -20,27 +20,28 @@ public class PlataformaMovel : MonoBehaviour
         // Se chegou no destino, inverte
         if (Vector3.Distance(transform.position, destinoAtual) < 0.1f)
         {
-            destinoAtual = (destinoAtual == pontoA.position) ? pontoB.position : pontoA.position;
+            destinoAtual = (destinoAtual == pontoA.position) ? pontoB.position : pontoA.position; // Tentando aprender
         }
+        posicaoAnterior = transform.position; // !
     }
 
-    // Codigo abaixo nao aparenta funcionar, arrumar quando possivel.
+    private Vector3 posicaoAnterior; // Variável para guardar o deslocamento da plataforma no último frame
 
-    // Faz o Player "virar filho" da plataforma para ele se mover junto com ela
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            other.transform.SetParent(transform);
+            // Pegamos o CharacterController do Player
+            CharacterController player = other.GetComponent<CharacterController>();
+            
+            if (player != null)
+            {
+                // Calculamos quanto a plataforma se moveu neste frame
+                Vector3 deslocamento = transform.position - posicaoAnterior;
+                
+                // Movemos o player manualmente a mesma distância, sem interferir no WASD dele
+                player.Move(deslocamento);
+            }
         }
     }
-
-    // Quando o Player pula ou sai, ele deixa de ser filho
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            other.transform.SetParent(null);
-        }
-    }
-}
+} 
